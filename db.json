@@ -1,0 +1,16 @@
+{
+  "user" : [
+    {
+      "name" : "Aung Myo Myat",
+      "email" : "aungmyomyat874@gmail.com",
+      "password" : "12345"
+    }
+  ],
+  "post" : [
+    {
+      "id" : 1,
+      "body" : "post-content",
+      "userId" : 12345
+    }
+  ]
+}
