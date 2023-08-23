@@ -32,13 +32,13 @@ const SignUp = () => {
         }
     };
 
-    const {mutateAsync:createUserAsync} = useMutation({
+    const {mutateAsync} = useMutation({
         mutationKey : ['post','user'],
         mutationFn : createUser
     })
 
     async function handleSubmit() {
-        await createUserAsync()
+        await mutateAsync(user)
     }
 
     return (

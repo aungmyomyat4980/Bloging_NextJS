@@ -1,9 +1,9 @@
 {
   "user" : [
     {
-      "name" : "Aung Myo Myat",
-      "email" : "aungmyomyat874@gmail.com",
-      "password" : "12345"
+      "userName" : "Aung Myo Myat",
+      "userEmail" : "aungmyomyat874@gmail.com",
+      "userPassword" : "12345"
     }
   ],
   "post" : [
