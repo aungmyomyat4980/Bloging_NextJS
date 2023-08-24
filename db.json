@@ -1,16 +1,18 @@
 {
-  "user" : [
-    {
-      "userName" : "Aung Myo Myat",
-      "userEmail" : "aungmyomyat874@gmail.com",
-      "userPassword" : "12345"
-    }
-  ],
-  "post" : [
+  "users": [
     {
       "id" : 1,
-      "body" : "post-content",
-      "userId" : 12345
+      "name" : "Aung Myo Myat",
+      "email" : "aungmyomyat@gmail.com",
+      "password" : "password"
+    }
+  ],
+  "post": [
+    {
+      "id": 1,
+      "title": "Football",
+      "body": "post content",
+      "userId": 1
     }
   ]
 }

@@ -13,10 +13,10 @@ const queryClient = new QueryClient({
 
 export default function RootLayout({children}) {
     return (
-        <html lang="en">
         <QueryClientProvider client={queryClient}>
+        <html lang="en">
             <body>{children}</body>
-        </QueryClientProvider>
         </html>
+        </QueryClientProvider>
     )
 }

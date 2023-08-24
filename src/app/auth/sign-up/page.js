@@ -1,11 +1,14 @@
 'use client'
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import BaseLayout from "../../../../Layout/BaseLayout";
-import axios from "axios";
-import {data} from "autoprefixer";
-import {useMutation} from "@tanstack/react-query";
+import {useRouter} from "next/navigation";
+import {useUser} from "../../../../hooks/useUser";
 
 const SignUp = () => {
+    const {useUserMutation} = useUser();
+    const { mutateAsync : createUser } = useUserMutation()
+
+    const router = useRouter()
     const [user, setUser] = useState({
         userName: "",
         userPassword: "",
@@ -22,24 +25,17 @@ const SignUp = () => {
         })
     }
 
-    const createUser = async (user) => {
-        try {
-            const res = await axios.post('http://localhost:3000/user',user);
-            return res.data;
-        } catch (error) {
-            // Handle error appropriately, e.g., by throwing or returning an error message
-            throw new Error('Failed to create user: ' + error.message);
-        }
-    };
-
-    const {mutateAsync} = useMutation({
-        mutationKey : ['post','user'],
-        mutationFn : createUser
-    })
-
-    async function handleSubmit() {
-        await mutateAsync(user)
+    async function handleSubmit(e) {
+        e.preventDefault();
+        await createUser(user)
+        await router.push('/auth/sign-in')
+        setUser('')
     }
+
+    useEffect(() => {
+        router.prefetch('/auth/sign-in')
+    }, []);
+    
 
     return (
         <>
